@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
     this.http.get<any[]>('http://localhost:8080/cars').subscribe(value => this.cars = value);
   }
 
-  save(): void {
+  save(myForm: any): void {
     console.log(this.car);
     this.http.post<any>('http://localhost:8080/cars/save', this.car)
       .subscribe(() => {

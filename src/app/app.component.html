@@ -16,10 +16,11 @@
 <div *ngIf="oneCar.model!=''">{{oneCar.model}}-{{oneCar.price}}</div>
 
 <hr>
-
-<select #selected>
-   <option *ngFor="let car of cars" [value]="car.id">
-    id- {{car.id}} model- {{car.model}} price- {{car.price}}
-   </option>
-</select>
-<button (click)="delete(selected.value)">Delete</button>
+<form #myFormTwo="ngForm" >
+  <select #selected>
+    <option *ngFor="let car of cars" [value]="car.id">
+     id- {{car.id}} model- {{car.model}} price- {{car.price}}
+    </option>
+  </select>
+  <button (click)="delete(selected.value)">Delete</button>
+</form>
